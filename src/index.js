@@ -13,7 +13,7 @@ class App extends Component {
 
     this.state = { videos: []}
 
-    YTSearch({key: API_KEY, term: 'surboards'}, function(videos){
+    YTSearch({key: API_KEY, term: 'surboards'}, (videos) => {
       this.setState({ videos })
     })
 
@@ -24,6 +24,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        <VideoList videos={this.state.videos  }/>
       </div>
     )
   }
